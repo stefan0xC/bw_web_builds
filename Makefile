@@ -15,16 +15,8 @@ clean:
 .PHONY: clean
 
 checkout:
-	./scripts/checkout_web_vault.sh
+	git submodule update --init --recursive	
 .PHONY: checkout
-
-patch-web-vault:
-	./scripts/patch_web_vault.sh
-.PHONY: patch-web-vault
-
-generate-patch:
-	./scripts/generate_patch_file.sh
-.PHONY: generate-patch
 
 build:
 	./scripts/build_web_vault.sh
@@ -34,10 +26,11 @@ tar:
 	./scripts/tar_web_vault.sh
 .PHONY: tar
 
-full: checkout patch-web-vault build tar
+full: checkout build tar
 .PHONY: full
 
 docker:
+	git submodule foreach git clean -dfX
 	docker build -t bw_web_vault .
 .PHONY: docker
 

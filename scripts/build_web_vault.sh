@@ -28,10 +28,5 @@ npm run dist:oss:selfhost
 # Delete debugging map files, optional
 #find build -name "*.map" -delete
 
-# Create vw-version.json with the latest tag from the remote repo.
-printf '{"version":"%s"}' \
-      "$(git -c 'versionsort.suffix=-' ls-remote --tags --refs --sort='v:refname' https://github.com/dani-garcia/bw_web_builds.git 'v*' | tail -n1 | grep -Eo '[^\/v]*$')" \
-      > build/vw-version.json
-
 popd
 popd

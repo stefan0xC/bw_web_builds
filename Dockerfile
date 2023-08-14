@@ -17,7 +17,7 @@
 #    docker cp $image_id:/bw_web_vault.tar.gz .
 #    docker rm $image_id
 
-FROM node:16-bullseye as build
+FROM node:16-bookworm as build
 RUN node --version && npm --version
 
 # Prepare the folder to enable non-root, otherwise npm will refuse to run the postinstall
@@ -25,23 +25,9 @@ RUN mkdir /vault
 RUN chown node:node /vault
 USER node
 
-# Can be a tag, release, but prefer a commit hash because it's not changeable
-# https://github.com/bitwarden/clients/commit/${VAULT_VERSION}
-#
-# Using https://github.com/bitwarden/clients/releases/tag/web-v2023.7.1
-ARG VAULT_VERSION=42cbdbd25284460c2d9f02e3bdd8df962080b4d2
-
 WORKDIR /vault
-RUN git init
-RUN git remote add origin https://github.com/bitwarden/clients.git
-RUN git fetch --depth 1 origin "${VAULT_VERSION}"
-RUN git -c advice.detachedHead=false checkout FETCH_HEAD
 
-COPY --chown=node:node patches /patches
-COPY --chown=node:node resources /resources
-COPY --chown=node:node scripts/apply_patches.sh /apply_patches.sh
-
-RUN bash /apply_patches.sh
+COPY --chown=node:node clients /vault
 
 # Build
 RUN npm ci
@@ -51,10 +37,6 @@ RUN npm audit fix || true
 WORKDIR /vault/apps/web
 
 RUN npm run dist:oss:selfhost
-
-RUN printf '{"version":"%s"}' \
-      $(git -c 'versionsort.suffix=-' ls-remote --tags --refs --sort='v:refname' https://github.com/dani-garcia/bw_web_builds.git 'v*' | tail -n1 | grep -Eo '[^\/v]*$') \
-      > build/vw-version.json
 
 # Delete debugging map files, optional
 # RUN find build -name "*.map" -delete

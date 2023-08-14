@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 set -o pipefail -o errexit
 
-VAULT_FOLDER=web-vault
+VAULT_FOLDER=clients
 OUTPUT_FOLDER=builds
 
 function get_web_vault_version {

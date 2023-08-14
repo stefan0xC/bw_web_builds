@@ -15,14 +15,6 @@
 
 This is a repository to store the builds of the [Bitwarden web vault](https://github.com/bitwarden/clients/tree/master/apps/web) with the patches to make it work with [vaultwarden](https://github.com/dani-garcia/vaultwarden)
 
-To create a patch you need to modify the original sources from [Bitwarden web vault](https://github.com/bitwarden/clients/tree/master/apps/web) and execute:
-
-```bash
-git --no-pager diff --submodule=diff --no-color --minimal
-```
-
-This is needed because there are patches within the jslib submodule which with a default `git diff` are not shown.
-
 ## Building the web-vault
 To build the web-vault you need either node and npm installed or use Docker.
 
