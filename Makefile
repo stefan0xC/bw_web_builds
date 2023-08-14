@@ -30,7 +30,6 @@ full: checkout build tar
 .PHONY: full
 
 docker:
-	git submodule foreach git clean -dfX
 	docker build -t bw_web_vault .
 .PHONY: docker
 
