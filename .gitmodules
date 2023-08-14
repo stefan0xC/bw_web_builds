@@ -1,3 +1,4 @@
 [submodule "clients"]
 	path = clients
 	url = https://github.com/stefan0xC/bitwarden_clients.git
+	branch = v2023.7.1
