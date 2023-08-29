@@ -43,5 +43,6 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/images/icons/favicon-32x32.png' \
 	':!apps/web/src/images/icons/mstile-150x150.png' \
 	':!apps/web/src/images/icons/safari-pinned-tab.svg' \
+	':!bitwarden_license/' \
 	> ${OLD_VERSION}.patch
 popd
