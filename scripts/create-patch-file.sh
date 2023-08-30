@@ -43,6 +43,14 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/images/icons/favicon-32x32.png' \
 	':!apps/web/src/images/icons/mstile-150x150.png' \
 	':!apps/web/src/images/icons/safari-pinned-tab.svg' \
+	':!apps/web/tailwind.config.js' \
+	':!apps/web/tsconfig.json' \
+	':!package.json' \
+	':!libs/components/tailwind.config.js' \
 	':!bitwarden_license/' \
+	':!apps/web/src/app/billing/organizations/secrets-manager/' \
+	':!apps/browser' \
+	':!apps/cli' \
+	':!apps/desktop' \
 	> ${OLD_VERSION}.patch
 popd
