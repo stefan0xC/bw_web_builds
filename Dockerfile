@@ -31,7 +31,6 @@ COPY --chown=node:node clients /vault
 
 # Build
 RUN npm ci
-RUN npm audit fix || true
 
 # Switch to the web apps folder
 WORKDIR /vault/apps/web
