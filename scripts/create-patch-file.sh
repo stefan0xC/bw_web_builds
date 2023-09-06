@@ -52,5 +52,6 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/browser' \
 	':!apps/cli' \
 	':!apps/desktop' \
+	':!.github/' \
 	> ${OLD_VERSION}.patch
 popd
