@@ -43,12 +43,10 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/images/icons/favicon-32x32.png' \
 	':!apps/web/src/images/icons/mstile-150x150.png' \
 	':!apps/web/src/images/icons/safari-pinned-tab.svg' \
-	':!apps/web/tailwind.config.js' \
-	':!apps/web/tsconfig.json' \
+	':!apps/web/src/app/admin-console/icons/admin-console-logo.ts' \
+	':!apps/web/src/app/layouts/password-manager-logo.ts' \
 	':!package.json' \
-	':!libs/components/tailwind.config.js' \
 	':!bitwarden_license/' \
-	':!apps/web/src/app/billing/organizations/secrets-manager/' \
 	':!apps/browser' \
 	':!apps/cli' \
 	':!apps/desktop' \
