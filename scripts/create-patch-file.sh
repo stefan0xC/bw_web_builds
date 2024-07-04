@@ -45,6 +45,7 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/images/icons/safari-pinned-tab.svg' \
 	':!apps/web/src/app/admin-console/icons/admin-console-logo.ts' \
 	':!apps/web/src/app/layouts/password-manager-logo.ts' \
+	':!libs/auth/src/angular/icons/bitwarden-logo.icon.ts' \
 	':!package.json' \
 	':!bitwarden_license/' \
 	':!apps/browser' \
