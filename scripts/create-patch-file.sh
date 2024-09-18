@@ -32,6 +32,7 @@ git fetch upstream refs/tags/web-${OLD_VERSION}:refs/tags/web-${OLD_VERSION}
 # create a patch file compatible
 git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/favicon.ico' \
+	':!apps/web/src/images/logo.svg' \
 	':!apps/web/src/images/logo-dark@2x.png' \
 	':!apps/web/src/images/logo-white@2x.png' \
 	':!apps/web/src/images/icon-white.png' \
@@ -46,6 +47,7 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/app/admin-console/icons/admin-console-logo.ts' \
 	':!apps/web/src/app/layouts/password-manager-logo.ts' \
 	':!libs/auth/src/angular/icons/bitwarden-logo.icon.ts' \
+	':!libs/auth/src/angular/icons/bitwarden-shield.icon.ts' \
 	':!package.json' \
 	':!bitwarden_license/' \
 	':!apps/browser' \
