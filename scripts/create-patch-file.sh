@@ -33,6 +33,7 @@ git fetch upstream refs/tags/web-${OLD_VERSION}:refs/tags/web-${OLD_VERSION}
 git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/favicon.ico' \
 	':!apps/web/src/images/logo.svg' \
+	':!apps/web/src/images/logo-white.svg' \
 	':!apps/web/src/images/logo-dark@2x.png' \
 	':!apps/web/src/images/logo-white@2x.png' \
 	':!apps/web/src/images/icon-white.png' \
