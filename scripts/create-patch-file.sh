@@ -36,6 +36,7 @@ git diff web-${OLD_VERSION}..${OLD_VERSION} --abbrev=10 -- \
 	':!apps/web/src/images/logo-white.svg' \
 	':!apps/web/src/images/logo-dark@2x.png' \
 	':!apps/web/src/images/logo-white@2x.png' \
+	':!apps/web/src/images/icon-white.svg' \
 	':!apps/web/src/images/icon-white.png' \
 	':!apps/web/src/images/icon-dark.png' \
 	':!apps/web/src/images/icons/android-chrome-192x192.png' \
