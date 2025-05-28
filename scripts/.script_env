@@ -7,7 +7,7 @@ OUTPUT_FOLDER=builds
 
 function get_web_vault_version {
     # First check if we are able to get a tag or branch
-    VAULT_VERSION=$(git describe --abbrev=0 --tags --exact-match 2>/dev/null || git branch --show-current)
+    VAULT_VERSION=$(git branch --show-current)
     if [[ -z "${VAULT_VERSION}" ]]; then
       echo "can't determine version"
       exit

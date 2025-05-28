@@ -47,8 +47,10 @@ echo "fetching the latest release ${UPSTREAM_RELEASE}"
 git fetch upstream refs/tags/${UPSTREAM_RELEASE}:refs/tags/${UPSTREAM_RELEASE}
 
 # also make sure we have the base of the current release
+echo "fetch upstream ${OLD_VERSION}"
 git fetch upstream refs/tags/web-${OLD_VERSION}:refs/tags/web-${OLD_VERSION}
 
+echo "git rev-parse ${UPSTREAM_RELEASE#web-}"
 if git rev-parse "${UPSTREAM_RELEASE#web-}" > /dev/null 2>&1; then
 	echo "local branch ${UPSTREAM_RELEASE#web-} already exists";
 	exit
