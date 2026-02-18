@@ -20,6 +20,8 @@ npm --version
 # Build
 pushd "${VAULT_FOLDER}"
 npm ci
+# Remove commercial package
+rm -rf node_modules/@bitwarden/commercial-sdk-internal ;
 
 pushd apps/web
 npm run dist:oss:selfhost
